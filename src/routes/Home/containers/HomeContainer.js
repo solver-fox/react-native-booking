@@ -12,22 +12,22 @@ import {
 
 const mapStateToProps = (state) => ({
   region: state.home.region,
+  predictions: state.home.predictions || [],
   inputData: state.home.inputData || {},
   resultTypes: state.home.resultTypes || {},
-  predictions: state.home.predictions || [],
   selectedAddress: state.home.selectedAddress || {},
   fare: state.home.fare,
+  nearByDrivers: state.home.nearByDrivers || {},
   booking: state.home.booking || {},
-  nearByDrivers: state.home.nearByDrivers || {}
 });
 
 const mapActionCreators = {
   getCurrentLocation,
-  getInputData,
   toggleSearchResultModal,
-  getAddressPredictions,
+  getInputData,
   getSelectedAddress,
   bookCar,
+  getAddressPredictions,
   getNearByDrivers
 };
 export default connect(mapStateToProps, mapActionCreators)(Home);
